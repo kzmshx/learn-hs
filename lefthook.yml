@@ -14,6 +14,12 @@ pre-commit:
       glob: "**/*.hs"
       run: hlint {staged_files}
 
+check:
+  commands:
+    hlint:
+      files: find . -name '*.hs' -not -path './.stack-work/*'
+      run: hlint {files}
+
 fix:
   commands:
     ormolu:
