@@ -25,6 +25,7 @@ library
   exposed-modules:
     Product
     Quadruple
+    QuickSort
 
   other-modules:
     Paths_learn_hs
@@ -89,6 +90,7 @@ test-suite learn-hs-test
     Paths_learn_hs
     ProductSpec
     QuadrupleSpec
+    QuickSortSpec
     SpecHelper
 
   autogen-modules:
