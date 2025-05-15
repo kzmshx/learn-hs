@@ -1,15 +1,27 @@
 pre-commit:
   parallel: true
   commands:
-    fmt:
+    ormolu:
       glob: "**/*.hs"
       run: ormolu --mode check {staged_files}
-    lint:
+    cabal-gild:
+      glob: "**/*.cabal"
+      run: |
+        for file in {staged_files}; do
+          cabal-gild --io=$file
+        done
+    hlint:
       glob: "**/*.hs"
       run: hlint {staged_files}
 
 fix:
   commands:
-    fmt:
+    ormolu:
       files: find . -name '*.hs' -not -path './.stack-work/*'
       run: ormolu --mode inplace {files}
+    cabal-gild:
+      files: find . -name '*.cabal' -not -path './.stack-work/*'
+      run: |
+        for file in {files}; do
+          cabal-gild --io=$file
+        done
