@@ -1,0 +1,15 @@
+pre-commit:
+  parallel: true
+  commands:
+    fmt:
+      glob: "**/*.hs"
+      run: ormolu --mode check {staged_files}
+    lint:
+      glob: "**/*.hs"
+      run: hlint {staged_files}
+
+fix:
+  commands:
+    fmt:
+      files: find . -name '*.hs' -not -path './.stack-work/*'
+      run: ormolu --mode inplace {files}
