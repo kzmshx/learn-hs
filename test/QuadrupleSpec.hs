@@ -13,7 +13,7 @@ spec = describe "quadruple" $ do
         (-3, -12)
       ]
       (\(input, expected) -> "quadruple " ++ show input ++ " = " ++ show expected)
-      (\input expected -> quadruple (input :: Int) `shouldBe` expected)
+      (\(input, expected) -> quadruple (input :: Int) `shouldBe` expected)
 
   describe "with Double" $ do
     itEach
@@ -22,4 +22,4 @@ spec = describe "quadruple" $ do
         (-3.0, -12.0)
       ]
       (\(input, expected) -> "quadruple " ++ show input ++ " = " ++ show expected)
-      (\input expected -> quadruple (input :: Double) `shouldBe` expected)
+      (\(input, expected) -> quadruple (input :: Double) `shouldBe` expected)

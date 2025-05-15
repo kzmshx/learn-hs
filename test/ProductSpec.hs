@@ -16,4 +16,4 @@ spec = describe "product" $ do
         [([Int], Int)]
     )
     (\(input, expected) -> "product " ++ show input ++ " = " ++ show expected)
-    (\input expected -> product input `shouldBe` expected)
+    (\(input, expected) -> product input `shouldBe` expected)

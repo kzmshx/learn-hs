@@ -2,12 +2,8 @@ module SpecHelper (itEach) where
 
 import Test.Hspec (Expectation, Spec, it)
 
-itEach ::
-  [(a, b)] ->
-  ((a, b) -> String) ->
-  (a -> b -> Expectation) ->
-  Spec
-itEach cases descFn testFn =
+itEach :: [a] -> (a -> String) -> (a -> Expectation) -> Spec
+itEach cases description test =
   mapM_
-    (\(input, expected) -> it (descFn (input, expected)) $ testFn input expected)
+    (\input -> it (description input) $ test input)
     cases
