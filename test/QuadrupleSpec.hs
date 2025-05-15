@@ -12,7 +12,7 @@ spec = describe "quadruple" $ do
         (0, 0),
         (-3, -12)
       ]
-      (\(input, expected) -> "Quadruple(" ++ show input ++ ") = " ++ show expected)
+      (\(input, expected) -> "quadruple " ++ show input ++ " = " ++ show expected)
       (\input expected -> quadruple (input :: Int) `shouldBe` expected)
 
   describe "with Double" $ do
@@ -21,5 +21,5 @@ spec = describe "quadruple" $ do
         (0.0, 0.0),
         (-3.0, -12.0)
       ]
-      (\(input, expected) -> "Quadruple(" ++ show input ++ ") = " ++ show expected)
+      (\(input, expected) -> "quadruple " ++ show input ++ " = " ++ show expected)
       (\input expected -> quadruple (input :: Double) `shouldBe` expected)
