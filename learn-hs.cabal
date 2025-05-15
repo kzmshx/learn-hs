@@ -87,6 +87,7 @@ test-suite learn-hs-test
   other-modules:
     Paths_learn_hs
     QuadrupleSpec
+    SpecHelper
 
   autogen-modules:
     Paths_learn_hs
