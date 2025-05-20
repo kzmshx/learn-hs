@@ -1,7 +1,7 @@
 module MyListSpec (spec) where
 
 import Control.Exception (evaluate)
-import MyList (myInit, myLast)
+import MyList (halve, myInit, myLast, thirdByHeadTail, thirdByIndex, thirdByMatch)
 import SpecHelper (itEach)
 import Test.Hspec (Spec, anyException, describe, it, shouldBe, shouldThrow)
 
@@ -28,3 +28,41 @@ spec = do
 
     it "myInit [] throws an error" $ do
       evaluate (myInit []) `shouldThrow` anyException
+
+  describe "halve" $ do
+    itEach
+      [ ([], ([], [])),
+        ([1], ([], [1])),
+        ([1, 2], ([1], [2])),
+        ([1, 2, 3], ([1], [2, 3])),
+        ([1, 2, 3, 4], ([1, 2], [3, 4]))
+      ]
+      (\(input, expected) -> "halve " ++ show input ++ " = " ++ show expected)
+      (\(input, expected) -> halve (input :: [Int]) `shouldBe` expected)
+
+  describe "thirdByHeadTail" $ do
+    itEach
+      [ ([1, 2, 3], 3),
+        ([1, 2, 3, 4], 3),
+        ([1, 2, 3, 4, 5], 3)
+      ]
+      (\(input, expected) -> "thirdByHeadTail " ++ show input ++ " = " ++ show expected)
+      (\(input, expected) -> thirdByHeadTail (input :: [Int]) `shouldBe` expected)
+
+  describe "thirdByIndex" $ do
+    itEach
+      [ ([1, 2, 3], 3),
+        ([1, 2, 3, 4], 3),
+        ([1, 2, 3, 4, 5], 3)
+      ]
+      (\(input, expected) -> "thirdByIndex " ++ show input ++ " = " ++ show expected)
+      (\(input, expected) -> thirdByIndex (input :: [Int]) `shouldBe` expected)
+
+  describe "thirdByMatch" $ do
+    itEach
+      [ ([1, 2, 3], 3),
+        ([1, 2, 3, 4], 3),
+        ([1, 2, 3, 4, 5], 3)
+      ]
+      (\(input, expected) -> "thirdByMatch " ++ show input ++ " = " ++ show expected)
+      (\(input, expected) -> thirdByMatch (input :: [Int]) `shouldBe` expected)
