@@ -1,7 +1,19 @@
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 
 {-# HLINT ignore "Eta reduce" #-}
-module MyList (myInit, myLast, halve, thirdByHeadTail, thirdByIndex, thirdByMatch) where
+{-# HLINT ignore "Use null" #-}
+module MyList
+  ( myInit,
+    myLast,
+    halve,
+    thirdByHeadTail,
+    thirdByIndex,
+    thirdByMatch,
+    safetail1,
+    safetail2,
+    safetail3,
+  )
+where
 
 myInit :: [a] -> [a]
 myInit [] = error "empty list"
@@ -35,3 +47,21 @@ thirdByMatch [] = error "list must be at least length 3"
 thirdByMatch [_] = error "list must be at least length 3"
 thirdByMatch [_, _] = error "list must be at least length 3"
 thirdByMatch (_ : _ : x : _) = x
+
+-- Implement safetail using if
+safetail1 :: [a] -> [a]
+safetail1 x =
+  if null x
+    then []
+    else tail x
+
+-- Implement safetail using guard
+safetail2 :: [a] -> [a]
+safetail2 x
+  | null x = []
+  | otherwise = tail x
+
+-- Implement safetail using pattern matching
+safetail3 :: [a] -> [a]
+safetail3 [] = []
+safetail3 x = tail x

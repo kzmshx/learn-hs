@@ -1,7 +1,7 @@
 module MyListSpec (spec) where
 
 import Control.Exception (evaluate)
-import MyList (halve, myInit, myLast, thirdByHeadTail, thirdByIndex, thirdByMatch)
+import MyList (halve, myInit, myLast, safetail1, safetail2, safetail3, thirdByHeadTail, thirdByIndex, thirdByMatch)
 import SpecHelper (itEach)
 import Test.Hspec (Spec, anyException, describe, it, shouldBe, shouldThrow)
 
@@ -66,3 +66,21 @@ spec = do
       ]
       (\(input, expected) -> "thirdByMatch " ++ show input ++ " = " ++ show expected)
       (\(input, expected) -> thirdByMatch (input :: [Int]) `shouldBe` expected)
+
+  describe "safetail" $ do
+    itEach
+      [ ([1], []),
+        ([1, 2], [2]),
+        ([1, 2, 3], [2, 3])
+      ]
+      (\(input, expected) -> "safetail " ++ show input ++ " = " ++ show expected)
+      ( \(input, expected) -> do
+          safetail1 (input :: [Int]) `shouldBe` expected
+          safetail2 (input :: [Int]) `shouldBe` expected
+          safetail3 (input :: [Int]) `shouldBe` expected
+      )
+
+    it "safetail [] = []" $ do
+      safetail1 ([] :: [Int]) `shouldBe` []
+      safetail2 ([] :: [Int]) `shouldBe` []
+      safetail3 ([] :: [Int]) `shouldBe` []
