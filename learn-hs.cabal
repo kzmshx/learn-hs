@@ -28,6 +28,7 @@ library
     Product
     Quadruple
     QuickSort
+    Sumdown
 
   other-modules:
     Paths_learn_hs
@@ -96,6 +97,7 @@ test-suite learn-hs-test
     QuadrupleSpec
     QuickSortSpec
     SpecHelper
+    SumdownSpec
 
   autogen-modules:
     Paths_learn_hs
