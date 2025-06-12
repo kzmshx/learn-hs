@@ -1,5 +1,5 @@
 cabal-version: 2.2
--- This file has been generated from package.yaml by hpack version 0.37.0.
+-- This file has been generated from package.yaml by hpack version 0.38.0.
 --
 -- see: https://github.com/sol/hpack
 name: learn-hs
@@ -23,6 +23,7 @@ source-repository head
 
 library
   exposed-modules:
+    Exp
     Luhn
     MyList
     Product
@@ -90,6 +91,7 @@ test-suite learn-hs-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+    ExpSpec
     LuhnSpec
     MyListSpec
     Paths_learn_hs
