@@ -23,13 +23,12 @@ source-repository head
 
 library
   exposed-modules:
-    Euclid
-    Exp
     Luhn
     MyList
     Product
     Quadruple
     QuickSort
+    Rec
     Sumdown
 
   other-modules:
@@ -92,14 +91,13 @@ test-suite learn-hs-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-    EuclidSpec
-    ExpSpec
     LuhnSpec
     MyListSpec
     Paths_learn_hs
     ProductSpec
     QuadrupleSpec
     QuickSortSpec
+    RecSpec
     SpecHelper
     SumdownSpec
 
