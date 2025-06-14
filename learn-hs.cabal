@@ -23,13 +23,12 @@ source-repository head
 
 library
   exposed-modules:
+    ListComprehension
+    ListOperation
     Luhn
-    MyList
     Product
     Quadruple
-    QuickSort
     Rec
-    Sumdown
 
   other-modules:
     Paths_learn_hs
@@ -91,15 +90,14 @@ test-suite learn-hs-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+    ListComprehensionSpec
+    ListOperationSpec
     LuhnSpec
-    MyListSpec
     Paths_learn_hs
     ProductSpec
     QuadrupleSpec
-    QuickSortSpec
     RecSpec
     SpecHelper
-    SumdownSpec
 
   autogen-modules:
     Paths_learn_hs

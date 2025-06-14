@@ -1,4 +1,4 @@
-module QuickSort (quickSort) where
+module ListComprehension (quickSort) where
 
 quickSort :: (Ord a) => [a] -> [a]
 quickSort [] = []

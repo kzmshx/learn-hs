@@ -2,7 +2,7 @@
 
 {-# HLINT ignore "Eta reduce" #-}
 {-# HLINT ignore "Use null" #-}
-module MyList
+module ListOperation
   ( myInit,
     myLast,
     halve,

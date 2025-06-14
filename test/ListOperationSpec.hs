@@ -1,7 +1,7 @@
-module MyListSpec (spec) where
+module ListOperationSpec (spec) where
 
 import Control.Exception (evaluate)
-import MyList (halve, myInit, myLast, safetail1, safetail2, safetail3, thirdByHeadTail, thirdByIndex, thirdByMatch)
+import ListOperation (halve, myInit, myLast, safetail1, safetail2, safetail3, thirdByHeadTail, thirdByIndex, thirdByMatch)
 import SpecHelper (itEach)
 import Test.Hspec (Spec, anyException, describe, it, shouldBe, shouldThrow)
 

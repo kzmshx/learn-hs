@@ -1,6 +1,6 @@
-module QuickSortSpec (spec) where
+module ListComprehensionSpec (spec) where
 
-import QuickSort (quickSort)
+import ListComprehension (quickSort)
 import SpecHelper (itEach)
 import Test.Hspec (Spec, describe, shouldBe)
 
