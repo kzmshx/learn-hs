@@ -23,11 +23,9 @@ source-repository head
 
 library
   exposed-modules:
+    Basic
     ListComprehension
     ListOperation
-    Luhn
-    Product
-    Quadruple
     Rec
 
   other-modules:
@@ -90,12 +88,10 @@ test-suite learn-hs-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+    BasicSpec
     ListComprehensionSpec
     ListOperationSpec
-    LuhnSpec
     Paths_learn_hs
-    ProductSpec
-    QuadrupleSpec
     RecSpec
     SpecHelper
 
